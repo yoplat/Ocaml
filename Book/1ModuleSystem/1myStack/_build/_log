@@ -1,0 +1,16 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/home/yoplat/.opam/default/bin/ocamldep.opt -modules main.ml > main.ml.depends
+# Target: mystack.mli.depends, tags: { extension:mli, file:mystack.mli, ocaml, ocamldep, quiet }
+/home/yoplat/.opam/default/bin/ocamldep.opt -modules mystack.mli > mystack.mli.depends # cached
+# Target: mystack.cmi, tags: { byte, compile, extension:mli, file:mystack.mli, interf, ocaml, quiet }
+/home/yoplat/.opam/default/bin/ocamlc.opt -c -o mystack.cmi mystack.mli # cached
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
+/home/yoplat/.opam/default/bin/ocamlc.opt -c -o main.cmo main.ml
+# Target: mystack.ml.depends, tags: { extension:ml, file:mystack.ml, ocaml, ocamldep, quiet }
+/home/yoplat/.opam/default/bin/ocamldep.opt -modules mystack.ml > mystack.ml.depends # cached
+# Target: mystack.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:mystack.cmo, file:mystack.ml, implem, ocaml, quiet }
+/home/yoplat/.opam/default/bin/ocamlc.opt -c -o mystack.cmo mystack.ml # cached
+# Target: main.byte, tags: { byte, dont_link_with, extension:byte, file:main.byte, link, ocaml, program, quiet }
+/home/yoplat/.opam/default/bin/ocamlc.opt mystack.cmo main.cmo -o main.byte
+# Compilation successful.
