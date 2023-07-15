@@ -9,7 +9,7 @@ module ArithExpr = struct
   let rec tostring = function
     | Number n -> string_of_float n
     | Sum (n1, n2) ->
-        String.concat " " [ "("; tostring n0; "+"; tostring n2; ")" ]
+        String.concat " " [ "("; tostring n1; "+"; tostring n2; ")" ]
     | Dif (n1, n2) ->
         String.concat " " [ "("; tostring n1; "-"; tostring n2; ")" ]
     | Mul (n1, n2) ->
